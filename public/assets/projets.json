@@ -1,0 +1,39 @@
+[
+    {
+        "title": "Création d'une page web dynamique",
+        "description": "description",
+        "cover": "../photos/projet-1-cover-photo.png",
+        "github": "https://github.com/Anayot/PROJET-3.git",
+        "technologies": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "github"
+        ]
+    },
+    {
+        "title": "Création d'une application web avec React",
+        "description": "description",
+        "cover": "../photos/projet-2-cover-photo.png",
+        "github": "https://github.com/Anayot/PROJET-6.git",
+        "technologies": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "React",
+            "github"
+        ]
+    },
+    {
+        "title": "Développer le back-end d'un site web",
+        "description": "description",
+        "cover": "../photos/projet-3-cover-photo.png",
+        "github": "https://github.com/Anayot/PROJET-7.git",
+        "technologies": [
+            "JavaScript",
+            "NodeJS",
+            "MongoDB",
+            "github"
+        ]
+    }
+]
