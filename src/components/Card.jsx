@@ -1,23 +1,23 @@
 import styled from "styled-components"
 
-const CardContainer = styled.div`
-    background-color: white;
-    border-radius: 10px;
-    width: 450px;
-    height: 450px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;;
+const CardImage = styled.img`
+    height: 200px;
+    object-fit: cover;
+    border: solid 2px red;
 `
 
-function Card() {
-    return (
-        <CardContainer>
-            <img alt="photo du projet" src="" />
-            <h1>Titre du projet</h1>
+const CardTitle = styled.h2`
+    color: black;
+    padding: 10px;
+`
 
-        </CardContainer>
+function Card({title, cover}) {
+    return (
+        <>
+            <CardImage alt="photo du projet" src={cover} />
+            <CardTitle>{title}</CardTitle>
+
+        </>
     )
 }
 

@@ -20,19 +20,20 @@ const MenuHeader = styled.nav`
 const StyleLink = styled(Link)`
     color: white;
     text-decoration: none;
-    &: hover {
+    &: hover,
+    &: active {
         color: #f3cf55;
-    }
+    };
 `
 
 function Header() {
     return (
         <HeaderContainer>
             <MenuHeader>
-                <StyleLink to="/">A propos</StyleLink>
-                <StyleLink to="/">Mes compétences</StyleLink>
-                <StyleLink to="/projects">Mes projets</StyleLink>
-                <StyleLink to="/">Contact</StyleLink>
+                <StyleLink to="/" className="nav-link">A propos</StyleLink>
+                <StyleLink to="/" className="nav-link">Mes compétences</StyleLink>
+                <StyleLink to="/projects" className="nav-link">Mes projets</StyleLink>
+                <StyleLink to="/" className="nav-link">Contact</StyleLink>
             </MenuHeader>
         </HeaderContainer>
     )

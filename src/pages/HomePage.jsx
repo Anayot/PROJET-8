@@ -2,6 +2,8 @@ import styled from "styled-components"
 import Caroussel from "../components/Carrousel"
 import { Link } from "react-router-dom"
 import ProfilPicture from "../photo-de-profil.jpg"
+import SkillCard from "../components/SkillCard"
+import { useFetchSkills } from "../utils/hooks/FetchSkills"
 
 const HomeContainer = styled.div`
     margin: 50px;
@@ -49,22 +51,11 @@ const SkillsContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 4px;
     width: 100%;
+    gap: 10px;
+
 `
 
-const Skill = styled.div`
-    background-color: white;
-    width: 100%;
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-`
-
-const SkillTitle = styled.h2`
-    margin: 0;
-`
 
 const ProjectLink = styled(Link)`
     background-color: #f3cf55;
@@ -78,15 +69,23 @@ const ProjectLink = styled(Link)`
 
 
 function HomePage() {
+    const { skills } = useFetchSkills('./assets/skills.json', [])
+
     return (
         <HomeContainer>
             <DescriptionContainer>
                 <Picture src={ProfilPicture} alt="photo de profil"/>
                 <AboutMe>Description ici</AboutMe>
             </DescriptionContainer>
-            <HomeBox>
+            <HomeBox>    
                 <Title>Mes compétences</Title>
                 <SkillsContainer>
+                {skills.map((item) => (
+                    <SkillCard 
+                        title={item.title}
+                        technologies={item.technologies}
+                    />
+                ))}
                 </SkillsContainer>
             </HomeBox>
             <HomeBox>
