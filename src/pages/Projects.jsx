@@ -1,50 +1,91 @@
 import styled from "styled-components"
 import Card from "../components/Card"
+import Filters from "../components/Filters"
 import { useFetchProjects } from "../utils/hooks/FetchProjects"
 import { Link } from 'react-router-dom'
+import { MediaMobile } from "../utils/style/GlobalStyle"
 
 const MainContainer = styled.div`
     margin: 50px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    ${MediaMobile} {
+        margin: 10px;
+        gap: 15px;
+    }
+`
+
+const BannerImage = styled.img`
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    ${MediaMobile} {
+        border-radius: 0;
+        height: 80px;
+    }
 `
 
 const FilterContainer = styled.div`
     background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    ${MediaMobile} {
+        border-radius: 0;
+        padding: 10px;
+    }
+`
+
+const FilterTitle = styled.h2`
+    text-align: center;
+    margin: 0;
+    ${MediaMobile} {
+        font-size: 18px;
+    }
 `
 
 const CardsContainer = styled.div`
+    width: 100%;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-
+    ${MediaMobile} {
+        gap: 15px;
+    }
 `
 
 const CardLink = styled(Link)`
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 450px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     text-decoration: none;
+    ${MediaMobile} {
+        border-radius: 0;
+       
+    }
 `
 
 function Projects() {
     const { data } = useFetchProjects('./assets/projets.json', [])
-
-
+    const allSkills = [].concat(...data.map(item => item.technologies))
+    const getUniqueValue = [...new Set(allSkills)]
+    console.log("original array = ", allSkills)
+    console.log('unique array', getUniqueValue)
+    
     return (
         <MainContainer>
+            <BannerImage src="./assets/photos/banner-projets.jpeg" alt="banner"/>
             <FilterContainer>
-                <h1>Les filtres</h1>
+                <FilterTitle>Les filtres</FilterTitle>
+                    <Filters 
+                        items={getUniqueValue}
+                    />                    
             </FilterContainer>
             <CardsContainer>
-                {data.map((item) => (
-                    <CardLink to={`./projects/${item.id}`} key={`${item.id}`}>
+                {data.map((item, index) => (
+                    <CardLink to={`./${item.id}`} key={`link-${index}-${item.id}`}>
                         <Card 
                             title={item.title}
                             cover={item.cover}

@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import Ratings from "./Ratings"
+import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
 
-
-const Skills = styled.div`
+const SkillContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -13,32 +13,51 @@ const Skills = styled.div`
 const SkillTitle = styled.h2`
     margin: 0;
     text-align: center;
+    ${MediaMobile} {
+        font-size: 14px;
+    }
 `
 
 const Skill = styled.div`
-    padding: 20px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+    ${MediaMobile} {
+        font-size: 12px;
+        padding: 0 5px;
+        width: 90%;
+    }
 `
 
-function SkillCard({title, technologies}) {
+const SkillItem = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    ${MediaTablet} {
+        width: 130%;
+    }
+    ${MediaMobile} {
+        width: 100%
+    }
+`
+
+function SkillCard({title, skills}) {
 
     return (
-        <Skills>
+        <SkillContainer>
             <SkillTitle>{title}</SkillTitle>
             <Skill>
-                <div>{technologies.name}</div>
-                <div>{technologies.map((technologie) => 
-                    <div key={technologie}>
-                        {technologie.name} - {<Ratings rating={technologie.rating}/>}
-                    </div>
+                {skills.map((skill, index) => 
+                    <SkillItem key={`skill-${index}-${skill}`}>
+                        {skill.name} {<Ratings rating={skill.rating}/>}
+                    </SkillItem>
                 )}
-                </div>
-                
             </Skill>
 
-        </Skills>
+        </SkillContainer>
     )
 }
 

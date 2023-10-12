@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
+import { MediaMobile } from '../utils/style/GlobalStyle'
 
 const StarRate  = styled.div`
     display: flex;
@@ -10,6 +11,9 @@ const StarRate  = styled.div`
 const FullStar = styled(FontAwesomeIcon)`
     font-size: 22px;
     color: #f3cf55;
+    ${MediaMobile} {
+        font-size: 14px;
+    }
 `
 
 function Ratings({rating}) {

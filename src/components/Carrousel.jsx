@@ -1,20 +1,28 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { useState } from "react"
+import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
 
 const CarrousselContainer = styled.div`
     background-color: white;
     width: 100%;
     height: 315px;
     position: relative;
-    border-radius: 5px; 
+    border-radius: 5px;
+    ${MediaMobile} {
+        height: 200px;
+    }
 `
 
 const ImageStyle = styled.img`
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     border-radius: 5px;
+    ${MediaMobile} {
+        object-fit: fill;
+    }
 `
 
 const ChevronLeft = styled.div`
@@ -27,6 +35,12 @@ const ChevronLeft = styled.div`
     & * {
         color: #a95757;
     }
+    ${MediaTablet} {
+        left: 0;
+    }
+    ${MediaMobile} {
+        font-size: 20px;
+    }
 `
 const ChevronRight = styled.div`
     position: absolute;
@@ -38,24 +52,45 @@ const ChevronRight = styled.div`
     & * {
         color: #a95757;
     }
+    ${MediaTablet} {
+        right: 0;
+    }
+    ${MediaMobile} {
+        font-size: 20px;
+    }
 `
 
 const arrowRight = <FontAwesomeIcon icon={faChevronRight} />
 const arrowLeft = <FontAwesomeIcon icon={faChevronLeft} />
 
-function Caroussel() {
+function Carrousel({pictures}) {
+
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    if (pictures && pictures.length < 1) {
+        return null
+    }
+    
+    function goToPrevious() {
+        setCurrentIndex( current => (current -1 + pictures.length) % pictures.length)
+    }
+
+    function goToNext() {
+        setCurrentIndex( current => (current +1 + pictures.length) % pictures.length)
+    }
     
 
     return(
         <CarrousselContainer>
-            <ImageStyle alt="Image du projet" src="" />
+            <ImageStyle src={pictures[currentIndex]} alt="Image du projet" />
+            {pictures.length > 1 && (
             <>
-                <ChevronLeft>{arrowLeft}</ChevronLeft>
-                <ChevronRight>{arrowRight}</ChevronRight>
+                <ChevronLeft onClick={goToPrevious}>{arrowLeft}</ChevronLeft>
+                <ChevronRight onClick={goToNext}>{arrowRight}</ChevronRight>
 
-            </>
+            </>)}
         </CarrousselContainer>
     )
 }
 
-export default Caroussel
+export default Carrousel

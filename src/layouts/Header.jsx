@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { MediaMobile } from "../utils/style/GlobalStyle"
+
 
 const HeaderContainer = styled.div`
-    background-color: #a95757;
+    background-color: #9a2b2e;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-
 `
 
 const MenuHeader = styled.nav`
@@ -15,6 +16,9 @@ const MenuHeader = styled.nav`
     gap: 40px;
     margin: 35px 150px;
     font-size: 20px;
+    ${MediaMobile} {
+        margin: 20px
+    }
 `
 
 const StyleLink = styled(Link)`
@@ -23,7 +27,10 @@ const StyleLink = styled(Link)`
     &: hover,
     &: active {
         color: #f3cf55;
-    };
+    }
+    ${MediaMobile} {
+        font-size: 12px;
+    }
 `
 
 function Header() {

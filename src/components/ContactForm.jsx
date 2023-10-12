@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { MediaMobile } from "../utils/style/GlobalStyle"
+
 
 const FormContainer = styled.div`
     display: flex;
@@ -10,6 +12,9 @@ const FormContainer = styled.div`
 const FormTitle = styled.h1`
     color: white;
     margin: 0;
+    ${MediaMobile} {
+        font-size: 22px;
+    }
 `
 
 const FormLabels = styled.form`
@@ -22,18 +27,28 @@ const FormLabels = styled.form`
 const LabelForm = styled.label`
     color: white;
     margin: 30px 0 10px 0;
+    ${MediaMobile} {
+        font-size: 14px;
+        margin: 15px 0 5px 0;
+    }
 `
 
 const InputForm = styled.input`
     height: 30px;
     border: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    ${MediaMobile} {
+        height: 20px;
+    }
 `
 
 const TextareaForm = styled.textarea`
     border: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
     height: 80px;
+    ${MediaMobile} {
+        height: 50px;
+    }
 `
 
 const ButtonForm = styled.button`
@@ -46,6 +61,10 @@ const ButtonForm = styled.button`
     padding: 5px 20px;
     text-align: center;
     border: none;
+    ${MediaMobile} {
+        font-size: 14px
+    }
+
 `
 
 
@@ -54,13 +73,13 @@ function ContactForm() {
         <FormContainer>
             <FormTitle>Contactez-moi</FormTitle>  
             <FormLabels onSubmit={"submit"}>
-                <LabelForm for="name">nom : </LabelForm>
+                <LabelForm htmlFor="name">nom : </LabelForm>
                 <InputForm type="text" name="name"/>
 
-                <LabelForm for="email">email : </LabelForm>
+                <LabelForm htmlFor="email">email : </LabelForm>
                 <InputForm type="email" name="email"/>
 
-                <LabelForm for="message">messages : </LabelForm>
+                <LabelForm htmlFor="message">messages : </LabelForm>
                 <TextareaForm type="text" name="meassage"/>
 
                 <ButtonForm type="submit">Envoyer</ButtonForm>
