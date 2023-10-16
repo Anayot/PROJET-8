@@ -17,10 +17,10 @@ root.render(
       <GlobalStyle />
       <Header />
         <Routes>
-          <Route path='' element={<HomePage />}/>
-          <Route path='/' element={<HomePage />}/>
-          <Route path='/projects' element={<Projects />}/>
-          <Route path='/projects/:id' element={<ProjectPage />}/>
+          <Route path='/PROJET-8' element={<HomePage />}/>
+          <Route path='/PROJET-8' element={<HomePage />}/>
+          <Route path='/PROJET-8/projects' element={<Projects />}/>
+          <Route path='/PROJETS-8/projects/:id' element={<ProjectPage />}/>
           <Route path='*' element={<ErrorPage />}/>
         </Routes>
       <Footer />
