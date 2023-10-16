@@ -21,7 +21,7 @@ root.render(
           <Route path='/' element={<HomePage />}/>
           <Route path='/projects' element={<Projects />}/>
           <Route path='/projects/:id' element={<ProjectPage />}/>
-          <Route path='' element={<ErrorPage />}/>
+          <Route path='/*' element={<ErrorPage />}/>
         </Routes>
       <Footer />
     </Router>
