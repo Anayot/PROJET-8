@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Ratings from "./Ratings"
-import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
+import { MediaMobile } from "../utils/style/GlobalStyle"
 
 const SkillContainer = styled.div`
     display: flex;

@@ -71,7 +71,7 @@ const CardLink = styled(Link)`
 `
 
 function Projects() {
-    const { data } = useFetchProjects('./assets/projets.json', [])
+    const { data } = useFetchProjects(process.env.PUBLIC_URL+'/assets/projets.json', [])
     const allSkills = [].concat(...data.map(item => item.technologies))
     const getUniqueValue = [...new Set(allSkills)]
     console.log('unique array', getUniqueValue)
@@ -91,12 +91,13 @@ function Projects() {
     }, [data, setItems, setCurrentCat]) 
 
     useEffect(() => {
+        data.forEach(item => item.cover = item.cover.map(p => process.env.PUBLIC_URL+p) )
         setItems(data)
     }, [data])
 
     return (
         <MainContainer>
-            <BannerImage src="./assets/photos/banner-projets.jpeg" alt="banner"/>
+            <BannerImage src={process.env.PUBLIC_URL+"/assets/photos/banner-projets.jpeg"} alt="banner"/>
             <FilterContainer>
                 <FilterTitle>Les filtres</FilterTitle>
                     <Filters

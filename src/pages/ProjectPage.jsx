@@ -89,12 +89,13 @@ const Link = styled.a`
 
 function ProjectPage() {
     const id = useParams().id
-    const {data} = useFetchProjects('../assets/projets.json', [])
+    const {data} = useFetchProjects(process.env.PUBLIC_URL+'/assets/projets.json', [])
     const [project, setProject] = useState(null)
     const navigate = useNavigate()
     console.log(data)
 
     useEffect(() => {
+        data.forEach(item => item.cover = item.cover.map(p => process.env.PUBLIC_URL+p) )
         const loc = data.find(item => item.id === id)
         if(data.length > 0 && !loc) {
             return
@@ -119,7 +120,7 @@ function ProjectPage() {
                         <Skills>{project.technologies.map((technologie, index) => <Skill key={`skills-${index}-${technologie}`}>{technologie}</Skill> )}</Skills>
                     </ProjectDetail>
                 </ProjectInformation>
-                <Link href={project.github} target="blank"><img src="../assets/photos/logo-github.png" alt="lien github"/></Link>
+                <Link href={project.github} target="blank"><img src={process.env.PUBLIC_URL+"/assets/photos/logo-github.png"} alt="lien github"/></Link>
             </ProjectContainer>
 
 

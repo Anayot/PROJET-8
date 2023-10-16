@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
-import { useState } from "react"
 
 
 const FormContainer = styled.div`

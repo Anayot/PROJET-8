@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import Caroussel from "../components/Carrousel"
 import { Link } from "react-router-dom"
-import ProfilPicture from "../photo-de-profil.jpg"
 import SkillCard from "../components/SkillCard"
 import { useFetchSkills } from "../utils/hooks/FetchSkills"
 import { useFetchProjects } from "../utils/hooks/FetchProjects"
 import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
+import { useEffect } from "react"
 
 const HomeContainer = styled.div`
     margin: 50px;
@@ -33,7 +33,7 @@ const DescriptionContainer = styled.div`
 const PictureContainer = styled.div`
     border-radius: 10px;
     width: 50%;
-    background-image: url("/assets/photos/banner-projets.jpeg");
+    background-image: url(${process.env.PUBLIC_URL+"/assets/photos/banner-projets.jpeg"});
     ${MediaMobile} {
         width: 100%;
         height: 125px;
@@ -144,14 +144,19 @@ const ProjectLink = styled(Link)`
 
 
 function HomePage() {
-    const { skills } = useFetchSkills('./assets/skills.json', [])
-    const { data } = useFetchProjects('./assets/projets.json', [])
+    const { skills } = useFetchSkills(process.env.PUBLIC_URL+'/assets/skills.json', [])
+    const { data } = useFetchProjects(process.env.PUBLIC_URL+'/assets/projets.json', [])
+
+    useEffect(() => {
+        data.forEach(item => item.cover = item.cover.map(p => process.env.PUBLIC_URL+p) )
+        console.log("process", process.env.PUBLIC_URL)
+    }, [data])  
 
     return (
         <HomeContainer>
             <DescriptionContainer>
                 <PictureContainer>
-                    <Picture src={ProfilPicture} alt="photo de profil"/>
+                    <Picture src={process.env.PUBLIC_URL+"/assets/photos/photo-de-profil.jpg"} alt="photo de profil"/>
                 </PictureContainer>
                 <AboutMe>
                     <h2>Développeuse Web</h2>

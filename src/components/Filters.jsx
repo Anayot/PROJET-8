@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
-import { useState } from "react"
 
 const FilterContainer = styled.div`
     display: flex;
@@ -35,8 +34,7 @@ const Filter = styled.div`
 `
 
 function Filters({items, filterItems, selected}) {
-    const [allButton, setAllButton] = useState("Tous")
-    const allItems = [allButton, ...items]
+    const allItems = ["Tous", ...items]
 
     
     
