@@ -17,6 +17,7 @@ root.render(
       <GlobalStyle />
       <Header />
         <Routes>
+          <Route path='' element={<HomePage />}/>
           <Route path='/' element={<HomePage />}/>
           <Route path='/projects' element={<Projects />}/>
           <Route path='/projects/:id' element={<ProjectPage />}/>
