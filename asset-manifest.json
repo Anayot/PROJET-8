@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.js": "/PROJET-8/static/js/main.88efdf1d.js",
-    "static/media/photo-de-profil.jpg": "/PROJET-8/static/media/photo-de-profil.2fe7acea83c64de27577.jpg",
+    "main.js": "/PROJET-8/static/js/main.e5281f46.js",
     "index.html": "/PROJET-8/index.html",
-    "main.88efdf1d.js.map": "/PROJET-8/static/js/main.88efdf1d.js.map"
+    "main.e5281f46.js.map": "/PROJET-8/static/js/main.e5281f46.js.map"
   },
   "entrypoints": [
-    "static/js/main.88efdf1d.js"
+    "static/js/main.e5281f46.js"
   ]
 }
