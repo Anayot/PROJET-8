@@ -40,7 +40,12 @@
     {
         "title": "fonctionnelles",
         "technologies": [
-            
+            {"name": "Travail en équipe"},
+            {"name": "Gestion du temps"},
+            {"name": "Analyser les besoins fonctionnels"},
+            {"name": "Rédaction des spécifications techniques"},
+            {"name": "Rédaction d'un rapport d'intervention"},
+            {"name": "Optimiser les performances d'un site web"}
         ]
     }
 ]

@@ -4,6 +4,9 @@ import Filters from "../components/Filters"
 import { useFetchProjects } from "../utils/hooks/FetchProjects"
 import { Link } from 'react-router-dom'
 import { MediaMobile } from "../utils/style/GlobalStyle"
+import { useState } from "react"
+import { useEffect } from "react"
+import { useCallback } from "react"
 
 const MainContainer = styled.div`
     margin: 50px;
@@ -71,24 +74,44 @@ function Projects() {
     const { data } = useFetchProjects('./assets/projets.json', [])
     const allSkills = [].concat(...data.map(item => item.technologies))
     const getUniqueValue = [...new Set(allSkills)]
-    console.log("original array = ", allSkills)
     console.log('unique array', getUniqueValue)
+
+    const [currentCat, setCurrentCat] = useState("Tous")
+
+    const [items, setItems] = useState(data)
+    console.log(data)
     
+    const filterItems = useCallback((cat) => {
+        if(cat === "Tous") {
+            setItems(data)
+        } else {
+            setItems(data.filter((projet) => projet.technologies.includes(cat)))
+        }
+        setCurrentCat(cat)
+    }, [data, setItems, setCurrentCat]) 
+
+    useEffect(() => {
+        setItems(data)
+    }, [data])
+
     return (
         <MainContainer>
             <BannerImage src="./assets/photos/banner-projets.jpeg" alt="banner"/>
             <FilterContainer>
                 <FilterTitle>Les filtres</FilterTitle>
-                    <Filters 
+                    <Filters
+                        selected={currentCat}
                         items={getUniqueValue}
+                        filterItems={filterItems}
                     />                    
             </FilterContainer>
+            
             <CardsContainer>
-                {data.map((item, index) => (
+                {items.map((item, index) => (
                     <CardLink to={`./${item.id}`} key={`link-${index}-${item.id}`}>
                         <Card 
                             title={item.title}
-                            cover={item.cover}
+                            cover={item.cover[0]}
                         />
                     </CardLink>
                 ))}

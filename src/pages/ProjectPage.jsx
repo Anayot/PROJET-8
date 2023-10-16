@@ -3,18 +3,37 @@ import { useFetchProjects } from "../utils/hooks/FetchProjects"
 import { useState, useEffect } from "react"
 import Carrousel from "../components/Carrousel"
 import styled from "styled-components"
+import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
 
 const ProjectContainer = styled.div`
     margin: 50px;
     background-color: white;
     border-radius: 10px;
     padding: 40px;
+    & h1 {
+        text-align: center;
+    }
+    ${MediaTablet} {
+        padding: 20px;
+    }
+    ${MediaMobile} {
+        margin: 10px;
+        border-radius: 0;
+        & h1 {
+            font-size: 20px;
+        }
+    }
 `
 
 const ProjectInformation = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    ${MediaMobile} {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
 `
 
 const ProjectDetail = styled.div`
@@ -22,6 +41,14 @@ const ProjectDetail = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    ${MediaMobile} {
+        margin: 0;
+        padding: 5px;
+        & h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
 
 `
 
@@ -30,6 +57,9 @@ const Skills = styled.div`
     flex-direction : row;
     flex-wrap: wrap;
     gap: 10px;
+    ${MediaMobile} {
+        justify-content: center;
+    }
 `
 
 const Skill = styled.div`
@@ -38,6 +68,9 @@ const Skill = styled.div`
     text-align: center;
     padding: 5px 10px;
     color: white;
+    ${MediaMobile} {
+        font-size: 14px;
+    }
 `
 
 const Link = styled.a`
@@ -46,6 +79,11 @@ const Link = styled.a`
     cursor: pointer;
     & img {
         width: 40px;
+    }
+    ${MediaMobile} {
+        & img {
+            width: 20px;
+        }
     }
 `
 

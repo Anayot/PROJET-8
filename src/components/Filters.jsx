@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
+import { useState } from "react"
 
 const FilterContainer = styled.div`
     display: flex;
@@ -22,6 +23,9 @@ const Filter = styled.div`
     font-size: 18px;
     text-decoration: none;
     cursor: pointer;
+    &.selected {
+        background-color: black;
+    }
     ${MediaTablet} {
         font-size: 16px;
     }
@@ -30,13 +34,16 @@ const Filter = styled.div`
     }
 `
 
-function Filters({items}) {
+function Filters({items, filterItems, selected}) {
+    const [allButton, setAllButton] = useState("Tous")
+    const allItems = [allButton, ...items]
 
+    
+    
     return (
         <FilterContainer>
-            <Filter>Tous</Filter>
-            {items.map(item => (
-                <Filter key={item}>{item}</Filter>
+            {allItems.map(item => (
+                <Filter onClick={() => filterItems(item)} key={item} className={selected === item ? "selected" : ""}>{item}</Filter>
             ))}
 
         </FilterContainer>

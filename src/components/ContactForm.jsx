@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { MediaMobile } from "../utils/style/GlobalStyle"
+import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
+import { useState } from "react"
 
 
 const FormContainer = styled.div`
@@ -12,6 +13,9 @@ const FormContainer = styled.div`
 const FormTitle = styled.h1`
     color: white;
     margin: 0;
+    ${MediaTablet} {
+        font-size: 26px;
+    }
     ${MediaMobile} {
         font-size: 22px;
     }
@@ -27,6 +31,10 @@ const FormLabels = styled.form`
 const LabelForm = styled.label`
     color: white;
     margin: 30px 0 10px 0;
+    ${MediaTablet} {
+        font-size: 16px;
+        margin: 15px 0 5px 0;
+    }
     ${MediaMobile} {
         font-size: 14px;
         margin: 15px 0 5px 0;
@@ -69,10 +77,13 @@ const ButtonForm = styled.button`
 
 
 function ContactForm() {
+
+
     return (
-        <FormContainer>
+        <FormContainer id="contact">
             <FormTitle>Contactez-moi</FormTitle>  
-            <FormLabels onSubmit={"submit"}>
+            <FormLabels >
+                <input type="hidden" name="form-name" value="contact" />
                 <LabelForm htmlFor="name">nom : </LabelForm>
                 <InputForm type="text" name="name"/>
 

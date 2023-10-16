@@ -33,7 +33,7 @@ const DescriptionContainer = styled.div`
 const PictureContainer = styled.div`
     border-radius: 10px;
     width: 50%;
-    background-image: url("./assets/photos/banner-projets.jpeg");
+    background-image: url("/assets/photos/banner-projets.jpeg");
     ${MediaMobile} {
         width: 100%;
         height: 125px;
@@ -155,15 +155,17 @@ function HomePage() {
                 </PictureContainer>
                 <AboutMe>
                     <h2>Développeuse Web</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </AboutMe>
+                    <p>Cela fait maintenant 5 ans que le monde de l’IT n’a plus de secret pour moi (ou presque). En tant qu’ingénieur commercial, j’ai pu échanger avec de nombreux consultants en particulier des développeurs.</p>
+                    <p>De nature assez curieuse, je me suis toujours intéressée aux métiers de chacun et un jour je me suis dit « Pourquoi pas moi ? ».</p>
+                    <p>Comme il faut bien commencer quelque part, je me suis tournée vers une formation de développement web.</p>
+                </AboutMe> 
             </DescriptionContainer>
             <HomeBox>
                 <SkillsContainer>    
-                    <SkillsTitle>Mes compétences</SkillsTitle>
+                    <SkillsTitle id="skills">Mes compétences</SkillsTitle>
                     <SkillsCards>
                     {skills.map((item) => (
-                        <SkillCard 
+                        <SkillCard key={item.title}
                             title={item.title}
                             skills={item.technologies}
                         />

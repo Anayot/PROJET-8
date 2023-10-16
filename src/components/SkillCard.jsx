@@ -19,12 +19,12 @@ const SkillTitle = styled.h2`
 `
 
 const Skill = styled.div`
-    padding: 20px 50px;
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-    width: 100%;
+
     ${MediaMobile} {
         font-size: 12px;
         padding: 0 5px;
@@ -33,15 +33,10 @@ const Skill = styled.div`
 `
 
 const SkillItem = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 70%;
-    ${MediaTablet} {
-        width: 130%;
-    }
-    ${MediaMobile} {
-        width: 100%
-    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 `
 
 function SkillCard({title, skills}) {
