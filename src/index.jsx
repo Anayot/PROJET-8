@@ -6,8 +6,8 @@ import Footer from './layouts/Footer'
 import HomePage from './pages/HomePage'
 import Projects from './pages/Projects'
 import ProjectPage from './pages/ProjectPage'
-import Error from './components/Error'
 import GlobalStyle from './utils/style/GlobalStyle'
+import ErrorPage from './pages/Error'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -21,7 +21,7 @@ root.render(
           <Route path='/' element={<HomePage />}/>
           <Route path='/projects' element={<Projects />}/>
           <Route path='/projects/:id' element={<ProjectPage />}/>
-          <Route path='*' element={<Error />}/>
+          <Route path='*' element={<ErrorPage />}/>
         </Routes>
       <Footer />
     </Router>
