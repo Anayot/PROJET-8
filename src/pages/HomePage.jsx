@@ -6,6 +6,7 @@ import { useFetchSkills } from "../utils/hooks/FetchSkills"
 import { useFetchProjects } from "../utils/hooks/FetchProjects"
 import { MediaMobile, MediaTablet } from "../utils/style/GlobalStyle"
 import { useEffect } from "react"
+import { useState } from "react"
 
 const HomeContainer = styled.div`
     margin: 50px;
@@ -146,10 +147,10 @@ const ProjectLink = styled(Link)`
 function HomePage() {
     const { skills } = useFetchSkills(process.env.PUBLIC_URL+'/assets/skills.json', [])
     const { data } = useFetchProjects(process.env.PUBLIC_URL+'/assets/projets.json', [])
+    const [pictures, setPictures] = useState([])
 
     useEffect(() => {
-        data.forEach(item => item.cover = item.cover.map(p => process.env.PUBLIC_URL+p) )
-        console.log("process", process.env.PUBLIC_URL)
+        setPictures(data.map(item => process.env.PUBLIC_URL+item.cover[0]))
     }, [data])  
 
     return (
@@ -178,7 +179,7 @@ function HomePage() {
                     </SkillsCards>
                 </SkillsContainer>
                 <CarrouselContainer>
-                    <Caroussel pictures={data.map((item)=> item.cover[0])}/>
+                    <Caroussel pictures={pictures}/>
                     <ProjectLink to="/projects">Voir mes projets</ProjectLink>
                 </CarrouselContainer>
             </HomeBox>
