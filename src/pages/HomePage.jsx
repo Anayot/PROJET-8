@@ -20,8 +20,8 @@ const HomeContainer = styled.div`
 `
 
 const DescriptionContainer = styled.div`
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     gap: 15px;
 
     ${MediaMobile} {
@@ -33,8 +33,8 @@ const DescriptionContainer = styled.div`
 
 const PictureContainer = styled.div`
     border-radius: 10px;
-    width: 50%;
     background-image: url(${process.env.PUBLIC_URL+"/assets/photos/banner-projets.jpeg"});
+    background-size: cover;
     ${MediaMobile} {
         width: 100%;
         height: 125px;
@@ -47,7 +47,7 @@ const Picture = styled.img`
     width: 200px;
     aspect-ratio: 1/1;
     object-fit: cover;
-    padding: 50px 100px;
+    padding: 100px 100px;
     ${MediaTablet} {
         padding: 50px;
     }
@@ -108,8 +108,7 @@ const SkillsCards = styled.div`
     width: 100%;
     gap: 10px;
     ${MediaMobile} {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
     }
 
 `
@@ -130,9 +129,9 @@ const CarrouselContainer = styled.div`
 `
 
 const ProjectLink = styled(Link)`
-    background-color: #4C5699;
+    background-color: #3b91bc;
     border-radius: 50px;
-    padding: 14px 20px;
+    padding: 5px 20px;
     color: white;
     font-size: 20px;
     text-decoration: none;
@@ -150,7 +149,7 @@ function HomePage() {
     const [pictures, setPictures] = useState([])
 
     useEffect(() => {
-        setPictures(data.map(item => process.env.PUBLIC_URL+item.cover[0]))
+        setPictures(data.map(item => process.env.PUBLIC_URL+item.pictures[0]))
     }, [data])  
 
     return (
@@ -161,9 +160,10 @@ function HomePage() {
                 </PictureContainer>
                 <AboutMe>
                     <h2>Développeuse Web</h2>
-                    <p>Cela fait maintenant 5 ans que le monde de l’IT n’a plus de secret pour moi (ou presque). En tant qu’ingénieur commercial, j’ai pu échanger avec de nombreux consultants en particulier des développeurs.</p>
-                    <p>De nature assez curieuse, je me suis toujours intéressée aux métiers de chacun et un jour je me suis dit « Pourquoi pas moi ? ».</p>
-                    <p>Comme il faut bien commencer quelque part, je me suis tournée vers une formation de développement web.</p>
+                    <p>Durant ces cinq dernières années, j'ai plongé de manière progressive dans le monde de l'informatique. En tant qu'ingénieur commercial, mon rôle m'a permis d'entrer en contact avec de nombreux consultants, dont bon nombre de développeurs. Mon insatiable curiosité m'a toujours poussée à explorer en profondeur les diverses facettes de leurs métiers.</p>
+                    <p>Au fil du temps, une question m'est venue : "Pourquoi pas moi ?". C'est ainsi que j'ai pris la décision de me lancer dans une formation en développement web. Cette transition, quoique tardive, a été le fruit d’un intérêt grandissant pour l'informatique. Mon désir d'acquérir de nouvelles compétences et de contribuer de manière plus active à ce domaine en constante évolution a été le moteur de ma décision.</p>
+                    <p>Ma carrière d'ingénieur commercial m'a doté de compétences en communication, en négociation et en gestion de projet, que je suis impatiente d'appliquer dans le monde du développement web. J'ai appris à travailler en équipe, à comprendre les besoins des clients et à trouver des solutions adaptées à leurs exigences. Je suis convaincu que ces compétences seront des atouts précieux dans mon parcours de développeuse.</p>
+                    <p>Ce nouveau chapitre de ma vie est pour moi synonyme d'apprentissage, d'exploration et de croissance personnelle. Je suis persuadée que tout commence quelque part, et j'ai hâte de relever les défis qui se présenteront à moi et de contribuer au développement de solutions informatiques innovantes."</p>
                 </AboutMe> 
             </DescriptionContainer>
             <HomeBox>

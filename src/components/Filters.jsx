@@ -15,7 +15,7 @@ const FilterContainer = styled.div`
 `
 
 const Filter = styled.div`
-    background-color: #4C5699;
+    background-color: #3b91bc;
     border-radius: 50px;
     padding: 5px 20px;
     color: white;
@@ -23,7 +23,9 @@ const Filter = styled.div`
     text-decoration: none;
     cursor: pointer;
     &.selected {
-        background-color: black;
+        background-color: white;
+        color: #3b91bc;
+        border: solid 1px #3b91bc;
     }
     ${MediaTablet} {
         font-size: 16px;

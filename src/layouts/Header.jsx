@@ -68,7 +68,7 @@ const StyleLink = styled(NavLink)`
 
 
 function Header() {
-    const [menuOpen, setMenuOpen] = useState(true)
+    const [menuOpen, setMenuOpen] = useState(false)
     const burgerMenu = () => {
         if(!menuOpen) {
             setMenuOpen(true)

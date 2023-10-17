@@ -52,10 +52,12 @@ const CardsContainer = styled.div`
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
     ${MediaMobile} {
         gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
     }
 `
 
@@ -91,7 +93,7 @@ function Projects() {
     }, [data, setItems, setCurrentCat]) 
 
     useEffect(() => {
-        data.forEach(item => item.cover = item.cover.map(p => process.env.PUBLIC_URL+p) )
+        data.forEach(item => item.pictures = item.pictures.map(p => process.env.PUBLIC_URL+p) )
         setItems(data)
     }, [data])
 
@@ -112,7 +114,7 @@ function Projects() {
                     <CardLink to={`./${item.id}`} key={`link-${index}-${item.id}`}>
                         <Card 
                             title={item.title}
-                            cover={item.cover[0]}
+                            cover={item.pictures[0]}
                         />
                     </CardLink>
                 ))}

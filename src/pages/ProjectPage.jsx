@@ -52,6 +52,12 @@ const ProjectDetail = styled.div`
 
 `
 
+const ProjectDescription = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`
+
 const Skills = styled.div`
     display: flex;
     flex-direction : row;
@@ -63,7 +69,7 @@ const Skills = styled.div`
 `
 
 const Skill = styled.div`
-    background-color: rgb(76 86 153);
+    background-color: #3b91bc;
     border-radius: 50px;
     text-align: center;
     padding: 5px 10px;
@@ -95,7 +101,7 @@ function ProjectPage() {
     console.log(data)
 
     useEffect(() => {
-        data.forEach(item => item.cover = item.cover.map(p => process.env.PUBLIC_URL+p) )
+        data.forEach(item => item.pictures = item.pictures.map(p => process.env.PUBLIC_URL+p) )
         const loc = data.find(item => item.id === id)
         if(data.length > 0 && !loc) {
             return
@@ -108,12 +114,12 @@ function ProjectPage() {
         <>
         {project && (
             <ProjectContainer>
-                <Carrousel pictures={project.cover}/>
+                <Carrousel pictures={project.pictures}/>
                 <h1>{project.title}</h1>
                 <ProjectInformation>
                     <ProjectDetail>
                         <h2>Description</h2>
-                        <div>{project.description}</div>
+                        <ProjectDescription>{project.description.map((p, index) => <div key={`description-${index}-${p}`}>{p}</div>)}</ProjectDescription>
                     </ProjectDetail>
                     <ProjectDetail>
                         <h2>Technologies</h2>

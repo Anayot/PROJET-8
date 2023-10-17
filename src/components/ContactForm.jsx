@@ -59,15 +59,19 @@ const TextareaForm = styled.textarea`
 `
 
 const ButtonForm = styled.button`
-    background-color: #f3cf55;
-    border-radius: 50px;
+    background-color: #9a2b2e;
     color: white;
     font-size: 20px;
+    font-weight: bold
     cursor: pointer;
     margin: 30px auto;
     padding: 5px 20px;
     text-align: center;
     border: none;
+    &: hover{
+        color: #f3cf55;
+    
+    }
     ${MediaMobile} {
         font-size: 14px
     }
