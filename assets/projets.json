@@ -2,40 +2,85 @@
     {
         "id": "1",
         "title": "Création d'une page web dynamique",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "cover": ["/assets/photos/projet-1-cover-photo.png"],
+        "description": [
+            "Ce projet représente ma première expérience JavaScript au cours de ma formation. L'objectif principal était d'améliorer les fonctionnalités du site de l'architecte Sophie Bluel.",
+            "Pour cela, j'ai commencé par récupérer les données fournies par le backend en effectuant des requêtes API.",
+            "En tant que visiteur du site, l'utilisateur a accès uniquement à la page d'accueil de l'architecte, avec la possibilité de filtrer les différents projets en fonction des catégories proposées. Si l'utilisateur est l'architecte elle-même, elle pourra se connecter et apporter des modifications à son propre site, y compris sa photo de profil, son descriptif personnel et ses projets.",
+            "Pour la gestion des projets, j'ai mis en place une première fenêtre modale qui permet la modification et la suppression des projets existants. En outre, à partir de cette fenêtre modale, il est possible d'accéder à une deuxième fenêtre modale pour ajouter un nouveau projet.",
+            "Il est important de noter que ce site constitue un projet de formation et n'est donc pas encore complètement opérationnel."
+
+        ],
+        "pictures": [
+            "/assets/photos/projet-1/projet-1-cover-photo.png",
+            "/assets/photos/projet-1/projet-1-photo-1.png",
+            "/assets/photos/projet-1/projet-1-photo-2.png",
+            "/assets/photos/projet-1/projet-1-photo-3.png",
+            "/assets/photos/projet-1/projet-1-photo-4.png"
+        
+        ],
         "github": "https://github.com/Anayot/PROJET-3.git",
         "technologies": [
+            "JavaScript",
             "HTML5",
             "CSS3",
-            "JavaScript",
             "github"
         ]
     },
     {
         "id": "2",
-        "title": "Création d'une application web avec React",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "cover": ["/assets/photos/projet-2-cover-photo.png"],
+        "title": "Création d'une application web",
+        "description": [
+            "Ce projet a marqué le début de mon parcours avec React, un framework JavaScript populaire pour la création d'applications web interactives et dynamiques. Il s'est inscrit dans le cadre de ma formation en tant que développeur frontend. Mon rôle essentiel dans ce projet était de récupérer les données fournies, de les intégrer habilement dans l'application, et de créer des composants React.", 
+            "L'objectif principal qui sous-tendait la création de ces composants était de les rendre réutilisables dans divers contextes de l'application. Cela signifiait ne pas répéter le code source chaque fois que des éléments similaires sont à afficher. En évitant cette duplication de code, nous avons non seulement amélioré l'efficacité de notre développement, mais également facilité la maintenance à long terme de l'application.",
+            "Pour accomplir cette tâche, quatre composants majeurs ont été créés, chacun ayant un rôle spécifique au sein de l'application :",
+            "1. Les 'Cards' - Ces composants sont utilisés sur notre page d'accueil. Ils permettent de présenter de manière attrayante les informations sur différentes locations ou éléments similaires, offrant aux visiteurs un aperçu rapide et informatif.",
+            "2. Le 'Carrousel' - Ce composant a été intégré sur la page détaillée d'une location. Il permet de présenter des images ou des informations supplémentaires de manière interactive et dynamique, améliorant ainsi l'expérience utilisateur.",
+            "3. Les 'Collapsers' - Ces composants sont essentiels pour développer ou réduire une barre d'informations, offrant une approche plus modulaire pour la présentation des détails. Ils sont utilisés à la fois sur les pages dédiées aux locations et sur la page 'À propos'.",
+            "4. Les 'Ratings' - Ces composants sont dédiés à la gestion des évaluations et notations. Ils permettent aux utilisateurs de laisser des commentaires et d'attribuer des notes, contribuant ainsi à l'interaction et à l'engagement des visiteurs sur l'application.",
+            "En somme, ce projet a représenté une étape cruciale dans mon apprentissage de React, en me permettant de comprendre l'importance de la réutilisation de composants et de la modularité dans le développement d'applications web. Il a également mis en évidence l'efficacité de React pour créer des interfaces utilisateur interactives et dynamiques tout en améliorant l'expérience des utilisateurs finaux.",
+            "Il est important de noter que ce site constitue un projet de formation et n'est donc pas complètement opérationnel."
+        ],
+        "pictures": [
+            "/assets/photos/projet-2/projet-2-cover-photo.png",
+            "/assets/photos/projet-2/projet-2-photo-1.png",
+            "/assets/photos/projet-2/projet-2-photo-2.png",
+            "/assets/photos/projet-2/projet-2-photo-3.png",
+            "/assets/photos/projet-2/projet-2-photo-4.png"
+            
+        ],
         "github": "https://github.com/Anayot/PROJET-6.git",
         "technologies": [
+            "React",
+            "JavaScript",
             "HTML5",
             "CSS3",
-            "JavaScript",
-            "React",
             "github"
         ]
     },
     {
         "id": "3",
         "title": "Développer le back-end d'un site web",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "cover": ["/assets/photos/projet-3-cover-photo.png"],
+        "description": [
+            "Ce projet fût réalisé dans le cadre de ma formation en développement web, où j'ai endossé le rôle de développeuse backend. Mon principal objectif était de concevoir un serveur web à l'aide de NodeJS, de mettre en place des API pour faciliter la communication entre différentes applications, et d'intégrer les données dans une base de données MongoDB.",
+            "En tant que concepteur du backend de ce projet, l'une des tâches cruciales a été de mettre en place des collections spécifiques dans notre base de données. Cela impliquait de créer une structure de données organisée et adaptée à notre application. Deux collections clés ont été élaborées : une pour les utilisateurs et une autre pour les livres. Chacune de ces collections a été soigneusement conçue pour stocker les informations pertinentes, facilitant ainsi l'interaction entre les utilisateurs et les données.",
+            "De plus, la définition des routes au sein de du serveur était un élément fondamental de la création d'une expérience utilisateur fluide. Les routes servent de guide aux utilisateurs pour naviguer à travers l'application. Elles permettent de définir comment les demandes HTTP, telles que l'ajout d'un nouveau livre ou la modification d'un utilisateur, sont traitées par le serveur. Grâce à une architecture bien pensée des routes, nous avons pu garantir une expérience utilisateur cohérente et intuitive tout en optimisant la gestion des données.",
+            "Cependant, le rôle du backend ne se limite pas à l'organisation des données et de la navigation. Il est également chargé de sécuriser ces données. La sécurité des informations est une préoccupation majeure, en particulier lorsqu'il s'agit de données sensibles. C'est ici que l'ajout d'un middleware d'authentification entre en jeu. Le middleware d'authentification agit comme un garde-fou, veillant à ce que seuls les utilisateurs autorisés aient accès aux fonctionnalités de l'application. Cela inclut l'ajout, la modification et la suppression de livres, ainsi que la notation de ces livres. En mettant en place cette couche de sécurité, nous avons renforcé la protection des données, garantissant que seules les personnes ayant les droits appropriés peuvent interagir avec le système. Cela a grandement contribué à l'intégrité et à la confidentialité des informations stockées dans notre application.",
+            "Il est important de noter que ce site constitue un projet de formation et n'est donc pas complètement opérationnel."
+        ],
+        "pictures": [
+            "/assets/photos/projet-3/projet-3-cover-photo.png",
+            "/assets/photos/projet-3/projet-3-photo-1.png",
+            "/assets/photos/projet-3/projet-3-photo-2.png",
+            "/assets/photos/projet-3/projet-3-photo-3.png",
+            "/assets/photos/projet-3/projet-3-photo-4.png",
+            "/assets/photos/projet-3/projet-3-photo-5.png"
+        ],
         "github": "https://github.com/Anayot/PROJET-7.git",
         "technologies": [
-            "JavaScript",
             "NodeJS",
             "MongoDB",
+            "JWT",
+            "JavaScript",
             "github"
         ]
     }
