@@ -12,6 +12,7 @@ const CarrousselContainer = styled.div`
     border-radius: 5px;
     ${MediaMobile} {
         height: 200px;
+        border-radius: 0;
     }
 `
 
@@ -20,6 +21,7 @@ const ImageStyle = styled.img`
     height: 100%;
     object-fit: scale-down;
     border-radius: 5px;
+    paddin
     ${MediaMobile} {
         object-fit: fill;
     }
@@ -40,6 +42,8 @@ const ChevronLeft = styled.div`
     }
     ${MediaMobile} {
         font-size: 20px;
+        transform: translate(-120%);
+        top: 46%;
     }
 `
 const ChevronRight = styled.div`
@@ -57,6 +61,8 @@ const ChevronRight = styled.div`
     }
     ${MediaMobile} {
         font-size: 20px;
+        transform: translate(120%);
+        top: 46%;
     }
 `
 

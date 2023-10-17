@@ -123,7 +123,7 @@ const CarrouselContainer = styled.div`
     gap: 20px;
     ${MediaMobile} {
         border-radius: 0;
-        padding: 10px;
+        padding: 10px 20px;
         gap: 10px;
     }
 `
@@ -162,7 +162,7 @@ function HomePage() {
                     <h2>Développeuse Web</h2>
                     <p>Durant ces cinq dernières années, j'ai plongé de manière progressive dans le monde de l'informatique. En tant qu'ingénieur commercial, mon rôle m'a permis d'entrer en contact avec de nombreux consultants, dont bon nombre de développeurs. Mon insatiable curiosité m'a toujours poussée à explorer en profondeur les diverses facettes de leurs métiers.</p>
                     <p>Au fil du temps, une question m'est venue : "Pourquoi pas moi ?". C'est ainsi que j'ai pris la décision de me lancer dans une formation en développement web. Cette transition, quoique tardive, a été le fruit d’un intérêt grandissant pour l'informatique. Mon désir d'acquérir de nouvelles compétences et de contribuer de manière plus active à ce domaine en constante évolution a été le moteur de ma décision.</p>
-                    <p>Ma carrière d'ingénieur commercial m'a doté de compétences en communication, en négociation et en gestion de projet, que je suis impatiente d'appliquer dans le monde du développement web. J'ai appris à travailler en équipe, à comprendre les besoins des clients et à trouver des solutions adaptées à leurs exigences. Je suis convaincu que ces compétences seront des atouts précieux dans mon parcours de développeuse.</p>
+                    <p>Ma carrière d'ingénieur commercial m'a doté de compétences en communication, en négociation et en gestion de projet, que je suis impatiente d'appliquer dans le monde du développement web. J'ai appris à travailler en équipe, à comprendre les besoins des clients et à trouver des solutions adaptées à leurs exigences. Je suis convaincue que ces compétences seront des atouts précieux dans mon parcours de développeuse.</p>
                     <p>Ce nouveau chapitre de ma vie est pour moi synonyme d'apprentissage, d'exploration et de croissance personnelle. Je suis persuadée que tout commence quelque part, et j'ai hâte de relever les défis qui se présenteront à moi et de contribuer au développement de solutions informatiques innovantes."</p>
                 </AboutMe> 
             </DescriptionContainer>

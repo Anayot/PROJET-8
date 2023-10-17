@@ -3,11 +3,7 @@
         "title": "frontend",
         "technologies": [
             {
-                "name": "HTML5",
-                "rating": 3
-            },
-            {
-                "name": "CSS3",
+                "name": "React",
                 "rating": 3
             },
             {
@@ -15,7 +11,11 @@
                 "rating": 2
             },
             {
-                "name": "React",
+                "name": "HTML5",
+                "rating": 4
+            },
+            {
+                "name": "CSS3",
                 "rating": 3
             }
         ]
@@ -25,16 +25,26 @@
         "technologies": [
             {
                 "name": "NodeJS",
-                "rating": 2
+                "rating": 3
             },
             {
                 "name": "MongoDB",
                 "rating": 2
             },
             {
-                "name": "PHP",
-                "rating": 1
+                "name": "JWT",
+                "rating": 2
+            },
+            {
+                "name": "Multer",
+                "rating": 2
+            },
+            {
+                "name": "Sharp",
+                "rating": 2
             }
+
+
         ]
     },
     {
