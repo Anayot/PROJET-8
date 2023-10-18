@@ -11,8 +11,8 @@
 
         ],
         "pictures": [
-            "./assets/photos/projet-1/projet-1-cover-photo.png",
-            "./assets/photos/projet-1/projet-1-photo-1.png",
+            "/assets/photos/projet-1/projet-1-cover-photo.png",
+            "/assets/photos/projet-1/projet-1-photo-1.png",
             "/assets/photos/projet-1/projet-1-photo-2.png",
             "/assets/photos/projet-1/projet-1-photo-3.png",
             "/assets/photos/projet-1/projet-1-photo-4.png"

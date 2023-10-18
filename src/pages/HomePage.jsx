@@ -156,7 +156,7 @@ function HomePage() {
         <HomeContainer>
             <DescriptionContainer>
                 <PictureContainer>
-                    <Picture src="/assets/photos/photo-de-profil.jpg" alt="photo de profil"/>
+                    <Picture src={process.env.PUBLIC_URL+"/assets/photos/photo-de-profil.jpg"} alt="photo de profil"/>
                 </PictureContainer>
                 <AboutMe>
                     <h2>Développeuse Web</h2>
