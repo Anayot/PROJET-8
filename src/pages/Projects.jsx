@@ -111,7 +111,7 @@ function Projects() {
             
             <CardsContainer>
                 {items.map((item, index) => (
-                    <CardLink to={`./${item.id}`} key={`link-${index}-${item.id}`}>
+                    <CardLink to={`../${item.id}`} key={`link-${index}-${item.id}`}>
                         <Card 
                             title={item.title}
                             cover={item.pictures[0]}
